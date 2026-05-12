@@ -30,7 +30,7 @@ export function SearchBar({ initial = '' }: { initial?: string }) {
           onChange={(e) => setVin(e.target.value.toUpperCase())}
           placeholder="Enter 17-character VIN"
           maxLength={17}
-          className="flex-1 rounded-lg border border-slate-300 bg-white px-4 py-3 font-mono uppercase tracking-wider shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
+          className="flex-1 rounded-lg border border-slate-300 bg-white px-4 py-3 font-mono uppercase tracking-wider text-slate-900 placeholder:text-slate-400 shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
           autoComplete="off"
           spellCheck={false}
         />
