@@ -80,6 +80,20 @@ export type Recall = {
   description?: string;
   status?: string;
   source?: string;
+  component?: string;
+  consequence?: string;
+  remedy?: string;
+};
+
+export type Complaint = {
+  date?: string;
+  component?: string;
+  summary?: string;
+  crash?: boolean;
+  fire?: boolean;
+  injured?: number;
+  deaths?: number;
+  source?: string;
 };
 
 export type ServiceHighlight = { date: string; service: string; comments?: string };
@@ -134,5 +148,6 @@ export type FullReport = {
   owners?: OwnerRecord[];
   accidentEvents?: AccidentEvent[];
   recalls?: Recall[];
+  complaints?: Complaint[];
   serviceHighlights?: ServiceHighlight[];
 };

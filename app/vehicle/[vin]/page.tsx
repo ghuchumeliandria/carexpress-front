@@ -14,6 +14,7 @@ import { TitleHistory } from '@/components/report/TitleHistory';
 import { OwnershipHistory } from '@/components/report/OwnershipHistory';
 import { DetailedHistory } from '@/components/report/DetailedHistory';
 import { RecallList } from '@/components/report/RecallList';
+import { ComplaintList } from '@/components/report/ComplaintList';
 import { Glossary } from '@/components/report/Glossary';
 
 export const revalidate = 3600;
@@ -86,6 +87,10 @@ export default async function VehiclePage({ params }: Props) {
 
       <ReportSection title="Manufacturer Recalls" badge={`${r.recalls?.length ?? 0}`}>
         <RecallList recalls={r.recalls} />
+      </ReportSection>
+
+      <ReportSection title="Owner Complaints (NHTSA)" badge={`${r.complaints?.length ?? 0}`}>
+        <ComplaintList complaints={r.complaints} />
       </ReportSection>
 
       <ReportSection title="Detailed History">
