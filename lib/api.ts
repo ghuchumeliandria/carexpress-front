@@ -96,6 +96,31 @@ export type Complaint = {
   source?: string;
 };
 
+export type SafetyRating = {
+  vehicleDescription?: string;
+  overallRating?: number | string;
+  overallFrontCrashRating?: number | string;
+  overallSideCrashRating?: number | string;
+  rolloverRating?: number | string;
+  rolloverRiskPercent?: number;
+  frontCrashDriversideRating?: number | string;
+  frontCrashPassengersideRating?: number | string;
+  sideCrashDriversideRating?: number | string;
+  sideCrashPassengersideRating?: number | string;
+  sidePoleCrashRating?: number | string;
+  source?: string;
+};
+
+export type Investigation = {
+  date?: string;
+  campaignNumber?: string;
+  type?: string;
+  status?: string;
+  component?: string;
+  summary?: string;
+  source?: string;
+};
+
 export type ServiceHighlight = { date: string; service: string; comments?: string };
 
 export type AccidentEvent = {
@@ -149,5 +174,7 @@ export type FullReport = {
   accidentEvents?: AccidentEvent[];
   recalls?: Recall[];
   complaints?: Complaint[];
+  safetyRatings?: SafetyRating[];
+  investigations?: Investigation[];
   serviceHighlights?: ServiceHighlight[];
 };

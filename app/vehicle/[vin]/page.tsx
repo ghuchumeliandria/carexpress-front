@@ -15,6 +15,8 @@ import { OwnershipHistory } from '@/components/report/OwnershipHistory';
 import { DetailedHistory } from '@/components/report/DetailedHistory';
 import { RecallList } from '@/components/report/RecallList';
 import { ComplaintList } from '@/components/report/ComplaintList';
+import { SafetyRatings } from '@/components/report/SafetyRatings';
+import { InvestigationList } from '@/components/report/InvestigationList';
 import { Glossary } from '@/components/report/Glossary';
 
 export const revalidate = 3600;
@@ -91,6 +93,14 @@ export default async function VehiclePage({ params }: Props) {
 
       <ReportSection title="Owner Complaints (NHTSA)" badge={`${r.complaints?.length ?? 0}`}>
         <ComplaintList complaints={r.complaints} />
+      </ReportSection>
+
+      <ReportSection title="Federal Investigations (NHTSA)" badge={`${r.investigations?.length ?? 0}`}>
+        <InvestigationList investigations={r.investigations} />
+      </ReportSection>
+
+      <ReportSection title="NHTSA Crash Test Ratings">
+        <SafetyRatings ratings={r.safetyRatings} />
       </ReportSection>
 
       <ReportSection title="Detailed History">
